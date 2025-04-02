@@ -4,6 +4,7 @@ import Header from "./header";
 import Footer from "./footer";
 
 function Inicio(){
+    
     return(
         <div>
         <Header />
