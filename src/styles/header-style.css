@@ -1,0 +1,32 @@
+/* Fondo rosa oscuro para el navbar */
+.navbar {
+    background-color: #d63384 !important; /* rosa oscuro (como Bootstrap's pink) */
+}
+
+/* Texto blanco en todos los enlaces del navbar */
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: #fff !important;
+}
+
+/* Texto blanco al hacer hover */
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+    color: #ffe6f0 !important;
+}
+
+/* Botón de buscar con borde rosa claro */
+.btn-outline-light {
+    border-color: #ffc0cb;
+    color: #fff;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffc0cb;
+    color: #000;
+}
+
+/* Input del buscador con borde rosa */
+.form-control {
+    border: 1px solid #ffc0cb;
+}

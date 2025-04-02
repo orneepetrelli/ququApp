@@ -1,3 +1,4 @@
+import "../styles/header-style.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -25,6 +26,7 @@ function Header() {
                 </div>
             </div>
         </nav>
+    
     );
 }
 
