@@ -1,4 +1,4 @@
-
+/* Contenedor principal */
 .tarjetas-total-card {
   display: flex;
   flex-direction: column;
@@ -7,58 +7,54 @@
   background: #ffffff;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: 0;
+  padding: 20px 0;
 }
 
+/* Contenedor de tarjetas */
 .tarjetas-card-container {
   display: flex;
-  justify-content: flex-start;
   gap: 20px;
   padding: 20px;
   overflow-x: auto;
-  margin: 0 auto;
-  width: 100%;
+  width: 90%;
   scroll-snap-type: x mandatory;
+  justify-content: flex-start;
+  padding-left: 20px; /* Evita que la primera tarjeta quede cortada */
+  scroll-padding-left: 20px; /* Asegura el inicio del scroll */
+}
+
+
+.tarjetas-card-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tarjetas-card-container::-webkit-scrollbar-thumb {
+  background: #003a88;
+  border-radius: 4px;
 }
 
 .tarjetas-card-container .card {
   flex: 0 0 auto;
-  width: 20%;
+  width: 280px;
+  min-height: 360px; /* Asegura que todas tengan la misma altura */
   box-sizing: border-box;
-  margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   background-color: #fff;
-  box-shadow: 0 4px 8px #6c85bd;
-  min-width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   scroll-snap-align: start;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-@media (max-width: 480px) {
-  .tarjetas-card-container .card {
-    width: 90%;
-  }
-}
-
-.tarjetas-card-container .card {
-  width: 280px;
-  height: 360px;
-  padding: 2rem 1rem;
-  background: #fff;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: relative;
 }
-
+/* Efecto hover */
 .tarjetas-card-container .card:hover {
-  transform: translateY(20px);
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .tarjetas-card-container .card:before {
@@ -66,19 +62,19 @@
   position: absolute;
   top: 0;
   left: 0;
-  display: block;
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, #003b8876, #7bb4e3);
   z-index: 2;
-  transition: 0.5s all;
   opacity: 0;
+  transition: 0.5s;
 }
 
 .tarjetas-card-container .card:hover:before {
   opacity: 1;
 }
 
+/* Imagen de la tarjeta */
 .tarjetas-card-container .card img {
   width: 100%;
   height: 100%;
@@ -86,21 +82,19 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
+/* Información de la tarjeta */
 .tarjetas-card-container .card .info {
-  bottom: 20px;
   position: relative;
   z-index: 3;
   color: #fff;
   opacity: 0;
   transform: translateY(30px);
-  transition: 0.5s all;
+  transition: 0.5s;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 10px;
 }
 
 .tarjetas-card-container .card:hover .info {
@@ -110,15 +104,15 @@
 
 .tarjetas-card-container .card .info h1 {
   margin: 0;
+  font-size: 18px;
 }
 
 .tarjetas-card-container .card .info p {
-  letter-spacing: 1px;
-  font-size: 15px;
-  margin-top: 8px;
-  margin-bottom: 20px;
+  font-size: 14px;
+  margin: 8px 0;
 }
 
+/* Botón dentro de la tarjeta */
 .tarjetas-card-container .card .info .btn {
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -127,9 +121,33 @@
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.4s ease-in-out;
+  border-radius: 5px;
+  transition: 0.4s;
 }
 
 .tarjetas-card-container .card .info .btn:hover {
-  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-} 
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tarjetas-card-container {
+    gap: 15px;
+    padding-left: 15px;
+  }
+  .tarjetas-card-container .card {
+    width: 250px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tarjetas-card-container {
+    gap: 10px;
+    padding-left: 10px;
+  }
+  .tarjetas-card-container .card {
+    width: 90%;
+    height: 320px;
+  }
+}
