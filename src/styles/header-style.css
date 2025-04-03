@@ -1,16 +1,16 @@
 .custom-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    border-bottom: 1px solid #eee;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #eee;
+}
   
-  .header-left, .header-right {
+  .header-left{
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -53,9 +53,22 @@
   
   .floating-header button:hover {
     background-color: white;
-    color: #d63384;
+    color: red;
   }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto; 
+    padding-right: 2rem; 
+}
+.header-right .icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
   .logo {
     color: black;
     text-decoration: none;

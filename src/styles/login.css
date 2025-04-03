@@ -1,42 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
 
-body{
+body {
     border: 2px solid red;
     width: 100%;
     height: 100vh;
 }
 
-.container-login{
+.container-login {
     border: 2px solid black;
     width: 800px;
     height: 500px;
     display: flex;
-
-}
-
-.container-form-login{
-    border: 2px solid green;
-    width:100%;
+    position: relative;
     overflow: hidden;
 }
 
-.container-form-login form{
+.container-form-login {
+    border: 2px solid green;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-form-login form {
     border: 2px solid red;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: tr;
 }
 
-.container-form-login h2{
+.container-form-login h2 {
     font-size: 30px;
     margin-bottom: 20px;
 }
@@ -47,7 +52,7 @@ body{
     margin-bottom: 25px;
 }
 
-.social-networks .ion-icon {
+.ion-icon {
     border: 1px solid #c9cccb;
     font-size: 35px;
     border-radius: 6px;
@@ -55,11 +60,9 @@ body{
     cursor: pointer;
 }
 
-
-.container-form-login span{
+.container-form-login span {
     font-size: 12px;
     margin-bottom: 15px;
-
 }
 
 .container-input {
@@ -74,15 +77,15 @@ body{
     background-color: #EEEEEE;
 }
 
-.container-input input{
-    border:none;
+.container-input input {
+    border: none;
     outline: none;
     width: 100%;
     height: 100%;
     background-color: inherit;
 }
 
-.container-form-login a{
+.container-form-login a {
     color: black;
     font-size: 14px;
     margin-top: 5px;
@@ -101,9 +104,19 @@ body{
     color: white;
 }
 
-/* animacion xd */
+/* Animación para alternar entre Iniciar Sesión y Registro */
+.sign-in {
+    transform: translateX(0%);
+}
 
-.sing-up{
+.sign-up {
+    transform: translateX(100%);
+}
+
+.container-login.toggle .sign-in {
     transform: translateX(-100%);
 }
 
+.container-login.toggle .sign-up {
+    transform: translateX(0%);
+}

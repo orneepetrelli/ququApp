@@ -1,19 +1,26 @@
+import "../styles/sidebar.css";
 import React from "react";
-import "./header.css";
 import { FaHome, FaBell, FaPlus, FaCommentDots, FaCog } from "react-icons/fa";
 
-function Sidebar() {
-  return (
-    <aside className="sidebar">
-      <div className="sidebar-icons">
+function SideBar () {
+    return (
+
+        <sidebar className = "custon-sidebar">
+
+        <div className = "sidebar">
         <button><FaHome /></button>
-        <button><FaPlus /></button>
-        <button><FaBell /></button>
-        <button><FaCommentDots /></button>
-        <button><FaCog /></button>
-      </div>
-    </aside>
-  );
+                <button><FaPlus /></button>
+                <button><FaBell /></button>
+                <button><FaCommentDots /></button>
+                <button><FaCog /></button>
+        </div>
+
+
+
+
+        </sidebar>
+
+    )
 }
 
-export default Sidebar;
+export default SideBar;

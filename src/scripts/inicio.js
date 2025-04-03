@@ -1,5 +1,6 @@
 import React from "react";
 import Tarjetas from "./tarjetas";
+import SideBar from "./sidebar";
 import Header from "./header";
 import Footer from "./footer";
 
@@ -7,7 +8,8 @@ function Inicio(){
     
     return(
         <div>
-        <Header />
+            <SideBar />
+            <Header />
         
         <div className="container text-center my-5">
             <h1 className="mb-4">Bienvenido a la Página de Inicio</h1>
