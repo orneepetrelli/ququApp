@@ -28,7 +28,7 @@
 }
 
 .tarjetas-card-container::-webkit-scrollbar-thumb {
-  background: #003a88;
+  background-color: inherit;
   border-radius: 4px;
 }
 
