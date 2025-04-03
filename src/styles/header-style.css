@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-Fondo rosa oscuro para el navbar
-.navbar {
-    background-color: #d63384 !important; /* rosa oscuro (como Bootstrap's pink) */
-}
-=======
 .custom-header {
     display: flex;
     justify-content: space-between;
@@ -96,7 +90,6 @@ Fondo rosa oscuro para el navbar
     background-color: white;
     color: #d63384;
   }
->>>>>>> ed0c19ff9d5dc6be5df0726fdaf85f54fa87b429
 
   .logo {
     color: black;
