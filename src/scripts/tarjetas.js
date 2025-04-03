@@ -1,27 +1,36 @@
-import React from 'react';
-import { Container, Button } from 'react-bootstrap';
-import '../styles/tarjetas.css'; 
+import React from "react";
+import { Container, Button } from "react-bootstrap";
+import "../styles/tarjetas.css";
 
-const Tarjetas = ({ flights = [{ image: 'https://via.placeholder.com/150', destination: 'Paris', price: 500 }], handleSelectFlight }) => {
+const Tarjetas = ({
+  items = [
+    { image: "https://via.placeholder.com/150", title: " tarjetiña ", description: " lo que sea" },
+    { image: "https://via.placeholder.com/150", title: " tarjetiña ", description: " lo que sea" },
+    { image: "https://via.placeholder.com/150", title: " lucho ", description: " lo que sea" },
+    { image: "https://via.placeholder.com/150", title: " lucho ", description: " lo que sea" },
+    { image: "https://via.placeholder.com/150", title: " asdkasj ", description: " lo que sea" }
+  ],
+  handleSelectItem,
+}) => {
   return (
     <Container>
       <div className="tarjetas-total-card">
         <div className="tarjetas-card-container">
-          {flights.length > 0 ? (
-            flights.map((flight, index) => (
+          {items.length > 0 ? (
+            items.map((item, index) => (
               <div className="card" key={index}>
-                <img src={flight.image} alt={flight.destination} />
+                <img src={item.image} alt={item.title} />
                 <div className="info">
-                  <h1>{flight.destination}</h1>
-                  <p>Precio: ${flight.price}</p>
-                  <Button onClick={() => handleSelectFlight(flight)} variant="primary">
+                  <h1>{item.title}</h1>
+                  <p>{item.description}</p>
+                  <Button onClick={() => handleSelectItem(item)} variant="primary">
                     Seleccionar
                   </Button>
                 </div>
               </div>
             ))
           ) : (
-            <p>No hay vuelos disponibles</p>
+            <p>No hay tarjetasssssssss</p>
           )}
         </div>
       </div>
