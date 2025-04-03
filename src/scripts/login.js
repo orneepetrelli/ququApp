@@ -9,12 +9,20 @@ import { IoLogoTiktok } from "react-icons/io5";
 import { IoMailOutline, IoLockClosedOutline, IoPersonOutline } from "react-icons/io5";
 
 function Login() {
+    const btn = document.getElementById("btn");
+    const container = document.querySelector(".container");
+
+    btn.addEventListener("click",()=>{
+        container.classList.toggle("toggle") //añadir la clase al container si es que aun no lo tiene y si lo tiene lo elimina
+    });
+
     return (
         <div>
+
             {/* <Header /> */}
-            <div className="container">
-                <div className="container-form">
-                    <form className="sig-in">
+            <div className="container-login">
+                <div className="container-form-login">
+                    <form className="sign-in">
                         <h2>Iniciar Sesión</h2>
                         <div className="social-networks">
                             <IoLogoTwitch className="ion-icon" />
@@ -32,10 +40,10 @@ function Login() {
                             <input type="password" placeholder="Password" />
                         </div>
                         <a href="#">¿Olvidaste tu contraseña?</a>
-                        <button className="button">INICIAR SESIÓN</button>
+                        <button className="button-login">INICIAR SESIÓN</button>
                     </form>
                 </div>
-                <div className="container-form">
+                <div className="container-form-login">
                     <form className="sing-up">
                         <h2>Registrarse</h2>
                         <div className="social-networks">
@@ -57,10 +65,11 @@ function Login() {
                             <IoLockClosedOutline size={30} color="#000" />
                             <input type="password" placeholder="Password" />
                         </div>
-                        <button className="button">REGISTRARSE</button>
+                        <button className="button-login">REGISTRARSE</button>
                     </form>
                 </div>
             </div>
+            <button id="btn" >Click</button>
             {/* <Footer /> */}
         </div>
     );

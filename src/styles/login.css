@@ -13,7 +13,7 @@ body{
     height: 100vh;
 }
 
-.container{
+.container-login{
     border: 2px solid black;
     width: 800px;
     height: 500px;
@@ -21,12 +21,13 @@ body{
 
 }
 
-.container-form{
+.container-form-login{
     border: 2px solid green;
     width:100%;
+    overflow: hidden;
 }
 
-.container-form form{
+.container-form-login form{
     border: 2px solid red;
     height: 100%;
     display: flex;
@@ -35,7 +36,7 @@ body{
     align-items: center;
 }
 
-.container-form h2{
+.container-form-login h2{
     font-size: 30px;
     margin-bottom: 20px;
 }
@@ -55,7 +56,7 @@ body{
 }
 
 
-.container-form span{
+.container-form-login span{
     font-size: 12px;
     margin-bottom: 15px;
 
@@ -81,14 +82,14 @@ body{
     background-color: inherit;
 }
 
-.container-form a{
+.container-form-login a{
     color: black;
     font-size: 14px;
     margin-top: 5px;
     margin-bottom: 20px;
 }
 
-.button{
+.button-login {
     width: 170px;
     height: 45px;
     font-size: 15px;
@@ -99,3 +100,10 @@ body{
     background-color: #3AB397;
     color: white;
 }
+
+/* animacion xd */
+
+.sing-up{
+    transform: translateX(-100%);
+}
+
