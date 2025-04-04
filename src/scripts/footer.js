@@ -36,7 +36,7 @@ function Footer() {
           <i className='bx bxl-instagram'></i>
           </a>
 
-          <a href="https://www.tiktok.com/ququapp" target="_blank" rel="noopener noreferrer">
+          <a  href="https://www.tiktok.com/@ququapp?refer=creator_embed" target="_blank" rel="noopener noreferrer">
           <i className = 'bx bxl-tiktok'></i>
           </a>
 
