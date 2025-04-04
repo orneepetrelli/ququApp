@@ -5,10 +5,6 @@ import { IoLogoTwitch, IoLogoTwitter, IoLogoInstagram, IoLogoTiktok, IoMailOutli
 function Login() {
     const [toggle, setToggle] = useState(false);
 
-    const handleToggle = () => {
-        setToggle(!toggle); // Alterna la clase "toggle"
-    };
-
     return (
         <div>
             <div className={`container-login ${toggle ? "toggle" : ""}`}>
@@ -32,8 +28,9 @@ function Login() {
                     <a href="#">¿Olvidaste tu contraseña?</a>
                     <button className="button-login">INICIAR SESIÓN</button>
                 </div>
+
                 <div className="container-form-login sign-up">
-                    <h2>Registrarse</h2>
+                    <h2>Registrarse!</h2>
                     <div className="social-networks">
                         <IoLogoTwitch className="ion-icon" />
                         <IoLogoTwitter className="ion-icon" />
@@ -55,8 +52,20 @@ function Login() {
                     </div>
                     <button className="button-login">REGISTRARSE</button>
                 </div>
+
+                <div className="container-welcome">
+                    <div className="welcome-sign-up welcome">
+                        <h3>Bienvenido</h3>
+                        <p>Ingrese sus datos personales para usar todas las funciones del sitio.</p>
+                        <button className="button-login" onClick={() => setToggle(true)}>Registrarse</button>
+                    </div>
+                    <div className="welcome-sign-in welcome">
+                        <h3>Hola!</h3>
+                        <p>Regístrese con sus datos personales para usar todas las funciones del sitio.</p>
+                        <button className="button-login" onClick={() => setToggle(false)}>Iniciar Sesión</button>
+                    </div>
+                </div>
             </div>
-            <button id="btn" onClick={handleToggle}>Click</button>
         </div>
     );
 }

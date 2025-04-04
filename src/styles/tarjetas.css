@@ -1,153 +1,118 @@
-/* Contenedor principal */
-.tarjetas-total-card {
+
+.tarjetas-container {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: #ffffff;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  justify-content: center;
+  width: 100%;
   padding: 20px 0;
+  overflow: hidden;
 }
 
-/* Contenedor de tarjetas */
 .tarjetas-card-container {
   display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
   gap: 20px;
-  padding: 20px;
-  overflow-x: auto;
-  width: 90%;
-  scroll-snap-type: x mandatory;
-  justify-content: flex-start;
-  padding-left: 20px; /* Evita que la primera tarjeta quede cortada */
-  scroll-padding-left: 20px; /* Asegura el inicio del scroll */
+  padding: 10px 0;
+  width: 80%;
+  scrollbar-width: none; 
 }
 
-
 .tarjetas-card-container::-webkit-scrollbar {
+<<<<<<< HEAD
   height: 8px;
 }
 
 .tarjetas-card-container::-webkit-scrollbar-thumb {
-  background: #003a88;
+  background-color: inherit;
   border-radius: 4px;
+=======
+  display: none;
+>>>>>>> 4039d756d847c5b459b08098eb508c8fa0e34b4e
 }
 
-.tarjetas-card-container .card {
+.card {
   flex: 0 0 auto;
-  width: 280px;
-  min-height: 360px; /* Asegura que todas tengan la misma altura */
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  width: 300px;
+  height: 420px;
+  scroll-snap-align: center;
+  border-radius: 15px;
   overflow: hidden;
-  background-color: #fff;
+  background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.3s ease-in-out;
-  position: relative;
-}
-/* Efecto hover */
-.tarjetas-card-container .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.tarjetas-card-container .card:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #003b8876, #7bb4e3);
-  z-index: 2;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.tarjetas-card-container .card:hover:before {
-  opacity: 1;
-}
-
-/* Imagen de la tarjeta */
-.tarjetas-card-container .card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-/* Información de la tarjeta */
-.tarjetas-card-container .card .info {
-  position: relative;
-  z-index: 3;
-  color: #fff;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.5s;
   text-align: center;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f3f3f3; 
+}
+
+.card .info {
   padding: 10px;
 }
 
-.tarjetas-card-container .card:hover .info {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.tarjetas-card-container .card .info h1 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.tarjetas-card-container .card .info p {
-  font-size: 14px;
-  margin: 8px 0;
-}
-
-/* Botón dentro de la tarjeta */
-.tarjetas-card-container .card .info .btn {
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  background: #fff;
-  color: #003a88;
-  font-size: 14px;
-  font-weight: bold;
+.btn-seleccionar {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
-.tarjetas-card-container .card .info .btn:hover {
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+.btn-seleccionar:hover {
+  background: #0056b3;
 }
 
-/* Responsive */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
 @media (max-width: 768px) {
   .tarjetas-card-container {
-    gap: 15px;
-    padding-left: 15px;
+    width: 100%;
   }
-  .tarjetas-card-container .card {
+  .card {
     width: 250px;
-    height: 340px;
-  }
-}
-
-@media (max-width: 480px) {
-  .tarjetas-card-container {
-    gap: 10px;
-    padding-left: 10px;
-  }
-  .tarjetas-card-container .card {
-    width: 90%;
-    height: 320px;
+    height: 380px;
   }
 }
