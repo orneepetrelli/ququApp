@@ -31,9 +31,25 @@ function Footer() {
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} quqúApp</p>
         <div className="footer-social">
+
+          <a href="https://www.instagram.com/ququappoficial" target="_blank" rel="noopener noreferrer">
           <i className='bx bxl-instagram'></i>
+          </a>
+
+          <a href="https://www.tiktok.com/ququapp" target="_blank" rel="noopener noreferrer">
+          <i className = 'bx bxl-tiktok'></i>
+          </a>
+
+          <a href="https://www.facebook.com/tuusuario" target="_blank" rel="noopener noreferrer">
           <i className='bx bxl-facebook'></i>
+          </a>
+
+          <a href="https://twitter.com/tuusuario" target="_blank" rel="noopener noreferrer">
           <i className='bx bxl-twitter'></i>
+          </a>
+
+
+          
         </div>
       </div>
     </footer>
