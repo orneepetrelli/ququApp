@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'boxicons/css/boxicons.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Inicio from "./scripts/inicio";
 import Login from "./scripts/login";

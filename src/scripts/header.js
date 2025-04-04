@@ -1,4 +1,4 @@
-import "../styles/header-style.css";
+import "../styles/header.css";
 import React from "react";
 import { FaSearch, FaShoppingBag } from "react-icons/fa";
 
