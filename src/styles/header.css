@@ -45,7 +45,7 @@
     border: none;
     outline: none;
     background: transparent;
-    color: black;
+    color: #6f0009;
     font-size: 1rem;
     font-weight: 500;
     padding: 0.5rem 1.5rem;
@@ -56,8 +56,8 @@
   }
   
   .floating-header button:hover {
-    background-color: white;
-    color: #6f0009;
+    background-color: #6f0009;
+    color: white;
   }
 
 .header-right {
@@ -83,7 +83,7 @@
   .icon {
     font-size: 1.2rem;
     cursor: pointer;
-    color: black;
+    color: #6f0009;
     transition: transform 0.2s;
   }
   
