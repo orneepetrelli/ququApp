@@ -20,16 +20,7 @@
 }
 
 .tarjetas-card-container::-webkit-scrollbar {
-<<<<<<< HEAD
-  height: 8px;
-}
-
-.tarjetas-card-container::-webkit-scrollbar-thumb {
-  background-color: inherit;
-  border-radius: 4px;
-=======
   display: none;
->>>>>>> 4039d756d847c5b459b08098eb508c8fa0e34b4e
 }
 
 .card {
