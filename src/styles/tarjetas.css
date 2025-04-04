@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 700px;
+  height: 700px; 
   padding: 20px 0;
   overflow: hidden;
 }
+
 
 .tarjetas-card-container {
   display: flex;
@@ -17,15 +18,14 @@
   gap: 30px;
   padding: 10px 0;
   width: 90%;
-  margin: 0 auto;
-  scrollbar-width: none;
+  scrollbar-width: none; 
 }
 
 .tarjetas-card-container::-webkit-scrollbar {
   display: none;
 }
 
-.card {
+.card { 
   flex: 0 0 auto;
   width: 350px;
   height: 550px;
@@ -43,13 +43,26 @@
 }
 
 .card:hover {
-  transform: scale(1.03);
+  transform: none;
 }
 
 .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
 }
 
 .scroll-btn {
@@ -67,11 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  transition: background 0.3s, transform 0.2s;
-=======
-  /*transition: background 0.3s;*/
->>>>>>> 64fd4cad130df83c6baafcaacd41e8034eb4258d
+  transition: background 0.3s;
   z-index: 10;
   backdrop-filter: blur(4px);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -88,4 +97,14 @@
 
 .scroll-btn.right {
   right: 10px;
+}
+
+@media (max-width: 768px) {
+  .tarjetas-card-container {
+    width: 100%;
+  }
+  .card {
+    width: 280px;
+    height: 440px;
+  }
 }
