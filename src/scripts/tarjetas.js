@@ -1,5 +1,9 @@
 import React, { useRef } from "react";
 import "../styles/tarjetas.css";
+import maquillaje from "../img/maquillaje.png";
+import pelo from "../img/pelo.jpeg";
+import ropa from "../img/ropa.jpeg";
+import unas from "../img/unas.jpeg";
 
 const Tarjetas = () => {
   const scrollRef = useRef(null);
@@ -17,11 +21,10 @@ const Tarjetas = () => {
   };
 
   const items = [
-    { image: "https://via.placeholder.com/400", title: "Tarjetiña" },
-    { image: "https://via.placeholder.com/400", title: "Lucho" },
-    { image: "https://via.placeholder.com/400", title: "Juanito" },
-    { image: "https://via.placeholder.com/400", title: "Pepito" },
-    { image: "https://via.placeholder.com/400", title: "Miau" }
+    { image: pelo, title: "Pelo" },
+    { image: ropa, title: "Ropa" },
+    { image: unas, title: "Uñas" },
+    { image: maquillaje, title: "Maquillaje" },
   ];
 
   return (
@@ -31,8 +34,7 @@ const Tarjetas = () => {
       <div className="tarjetas-card-container" ref={scrollRef}>
         {items.map((item, index) => (
           <div className="card" key={index}>
-            <img src={item.image} alt={item.title} className="card-image" />
-            <h2 className="card-title">{item.title}</h2>
+            <img src={item.image} className="card-image" />
           </div>
         ))}
       </div>
