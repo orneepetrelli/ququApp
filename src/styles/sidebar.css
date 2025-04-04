@@ -8,6 +8,8 @@
   transition: all 0.4s ease;
   z-index: 999;
 
+  transition: transform 0.4s ease, opacity 0.4s ease;
+
   width: 60px;
   height: auto;
   padding: 1rem 0.5rem;
@@ -27,7 +29,8 @@
 
 /* ✅ ESTO VA FUERA del media query */
 .sidebar button {
-  background-color: rgba(255, 255, 255, 0.2);
+  /*background-color: rgba(255, 255, 255, 0.2);*/
+  background : transparent;
   border: none;
   border-radius: 50%;
   width: 48px;
@@ -42,18 +45,26 @@
   backdrop-filter: blur(8px);
 }
 
-.sidebar button:hover {
-  background-color: white;
-  transform: scale(1.1);
+.sidebar button i {
+  font-size: 1.4rem;
+  color: #6f0009; /* ✅ color bordó base */
+  transition: color 0.3s ease;
 }
 
 .sidebar i {
   font-size: 1.2rem;
-  color: #333;
+  color: #6f0009;
 }
 
+.sidebar button:hover {
+  background-color: #6f0009;
+  transform: scale(1.1);
+}
+
+
+
 .sidebar button:hover i {
-  color: #6f0009;
+  color: white;
 }
 
 .sidebar.sidebar-stopped {
@@ -62,40 +73,38 @@
   bottom: 100px; /* Se detiene arriba del footer */
 }
 
-/* Oculta la sidebar con transición */
-.sidebar.sidebar-hidden {
+.sidebar-hide {
   transform: translateY(-50%) translateX(-120%);
   opacity: 0;
   pointer-events: none;
 }
 
-/* Botón flotante */
 .sidebar-toggle {
   position: fixed;
-  top: 50%;
-  left: 70px;
-  transform: translateY(-50%);
-  z-index: 1000;
+  bottom: 2rem;
+  left: 1.5rem;
   background-color: #6f0009;
-  border: none;
   color: white;
-  width: 36px;
-  height: 36px;
+  border: none;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  z-index: 1000;
+  cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.sidebar-toggle i {
-  font-size: 1.2rem;
 }
 
 .sidebar-toggle:hover {
   background-color: #a30014;
 }
 
+.toggle-hide {
+  transform: translateY(100px);
+  opacity: 0;
+  pointer-events: none;
+}
   
