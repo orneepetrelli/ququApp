@@ -68,8 +68,7 @@
 .scroll-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
+  background: #6f0009;
   color: white;
   border: none;
   cursor: pointer;
