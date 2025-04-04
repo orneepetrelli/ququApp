@@ -6,22 +6,22 @@ const Tarjetas = () => {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft -= 350;
+      scrollRef.current.scrollLeft -= 400;
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft += 350;
+      scrollRef.current.scrollLeft += 400;
     }
   };
 
   const items = [
-    { image: "https://via.placeholder.com/400", title: "Tarjetiña", description: "Lo que sea" },
-    { image: "https://via.placeholder.com/400", title: "Tarjetiña 2", description: "Lo que sea" },
-    { image: "https://via.placeholder.com/400", title: "Lucho", description: "Lo que sea" },
-    { image: "https://via.placeholder.com/400", title: "Juanito", description: "Lo que sea" },
-    { image: "https://via.placeholder.com/400", title: "Pepito", description: "Lo que sea" }
+    { image: "https://via.placeholder.com/400", title: "Tarjetiña" },
+    { image: "https://via.placeholder.com/400", title: "Lucho" },
+    { image: "https://via.placeholder.com/400", title: "Juanito" },
+    { image: "https://via.placeholder.com/400", title: "Pepito" },
+    { image: "https://via.placeholder.com/400", title: "Miau" }
   ];
 
   return (
@@ -32,11 +32,7 @@ const Tarjetas = () => {
         {items.map((item, index) => (
           <div className="card" key={index}>
             <img src={item.image} alt={item.title} className="card-image" />
-            <div className="info">
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-              <button className="btn-seleccionar">Seleccionar</button>
-            </div>
+            <h2 className="card-title">{item.title}</h2>
           </div>
         ))}
       </div>
