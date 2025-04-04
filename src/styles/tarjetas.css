@@ -67,11 +67,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  transition: background 0.3s, transform 0.2s;
-=======
   /*transition: background 0.3s;*/
->>>>>>> 64fd4cad130df83c6baafcaacd41e8034eb4258d
   z-index: 10;
   backdrop-filter: blur(4px);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
