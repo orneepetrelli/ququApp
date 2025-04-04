@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/login.css";
 import { IoLogoTwitch, IoLogoTwitter, IoLogoInstagram, IoLogoTiktok, IoMailOutline, IoLockClosedOutline, IoPersonOutline } from "react-icons/io5";
+import Header from "./header";
+import Footer from "./footer";
 
 function Login() {
     const [toggle, setToggle] = useState(false);
@@ -30,7 +32,7 @@ function Login() {
                 </div>
 
                 <div className="container-form-login sign-up">
-                    <h2>Registrarse!</h2>
+                    <h2>Registrarse</h2>
                     <div className="social-networks">
                         <IoLogoTwitch className="ion-icon" />
                         <IoLogoTwitter className="ion-icon" />
@@ -55,12 +57,12 @@ function Login() {
 
                 <div className="container-welcome">
                     <div className="welcome-sign-up welcome">
-                        <h3>Bienvenido</h3>
+                        <h3>¡Bienvenido</h3>
                         <p>Ingrese sus datos personales para usar todas las funciones del sitio.</p>
                         <button className="button-login" onClick={() => setToggle(true)}>Registrarse</button>
                     </div>
                     <div className="welcome-sign-in welcome">
-                        <h3>Hola!</h3>
+                        <h3>¡Hola!</h3>
                         <p>Regístrese con sus datos personales para usar todas las funciones del sitio.</p>
                         <button className="button-login" onClick={() => setToggle(false)}>Iniciar Sesión</button>
                     </div>
