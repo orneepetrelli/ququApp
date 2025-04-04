@@ -1,9 +1,13 @@
 
 .sidebar {
+
   position: fixed;
   top: 50%;
   left: 1rem;
   transform: translateY(-50%);
+  transition: all 0.4s ease;
+  z-index: 999;
+
   width: 60px;
   height: auto;
   padding: 1rem 0.5rem;
@@ -11,7 +15,6 @@
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
-  z-index: 999;
   border-radius: 50px;
 
   /* fondo glassmorphism */
@@ -53,5 +56,46 @@
   color: #6f0009;
 }
 
+.sidebar.sidebar-stopped {
+  position: absolute;
+  top: auto;
+  bottom: 100px; /* Se detiene arriba del footer */
+}
+
+/* Oculta la sidebar con transición */
+.sidebar.sidebar-hidden {
+  transform: translateY(-50%) translateX(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Botón flotante */
+.sidebar-toggle {
+  position: fixed;
+  top: 50%;
+  left: 70px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  background-color: #6f0009;
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar-toggle i {
+  font-size: 1.2rem;
+}
+
+.sidebar-toggle:hover {
+  background-color: #a30014;
+}
 
   
