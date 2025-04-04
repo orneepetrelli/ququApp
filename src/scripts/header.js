@@ -6,10 +6,10 @@ function Header() {
   return (
     <header className="custom-header">
       <div className="floating-header"> 
-        <button>holaa</button>
-        <button>miaw</button>
-        <button>miaw</button>
-        <button>miaw</button>
+        <button>Inicio</button>
+        <button>Servicios</button>
+        <button>Nosotros</button>
+        <button>Contacto</button>
       </div>
       <div className="header-right">
         <FaSearch className="icon" />
