@@ -81,11 +81,11 @@
 }
 
 .card-button:hover .card-image {
-  opacity: 0.3;
+  opacity: 1;
 }
 
 .card-button:hover .card-image-container::before {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .card-hover-text {
