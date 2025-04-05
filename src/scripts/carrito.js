@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Header from "./header";
-import Footer from "./footer";
-import SideBar from "./sidebar";
+import "../styles/carrito.css"; // Archivo CSS con animaciones
 
-function Carrito() {
-
-  console.log("ABIERTOOOOO!!!!");
+function Carrito({ visible, toggleCarrito }) {
   const [cartItems, setCartItems] = useState([]);
-
   const [cartTotal, setCartTotal] = useState(0);
 
   const agregarAlCarrito = (producto) => {
@@ -57,10 +52,9 @@ function Carrito() {
   }, [cartItems]);
 
   return (
-    <div>
-      <div>
-        <h1>Carrito de Compras</h1>
-      </div>
+    <div className={`carrito-panel ${visible ? "visible" : ""}`}>
+      <button className="cerrar-btn" onClick={toggleCarrito}>X</button>
+      <h1>Carrito de Compras</h1>
 
       {cartItems.length === 0 ? (
         <div>El carrito está vacío</div>
@@ -85,25 +79,6 @@ function Carrito() {
           <button>Finalizar Compra</button>
         </div>
       )}
-
-      <div>
-        <h2>Productos Disponibles</h2>
-        <ul>
-          <li>
-            Producto 1 - Precio: $20
-            <button onClick={() => agregarAlCarrito({ id: 1, nombre: "Producto 1", precio: 20 })}>
-              Agregar al Carrito
-            </button>
-          </li>
-          <li>
-            Producto 2 - Precio: $35
-            <button onClick={() => agregarAlCarrito({ id: 2, nombre: "Producto 2", precio: 35 })}>
-              Agregar al Carrito
-            </button>
-          </li>
-          {}
-        </ul>
-      </div>
     </div>
   );
 }

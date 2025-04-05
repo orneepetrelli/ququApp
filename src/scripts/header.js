@@ -2,16 +2,8 @@ import "../styles/header.css";
 import React from "react";
 import { FaSearch, FaShoppingBag } from "react-icons/fa";
 import Carrito from "../scripts/carrito.js"
-import { useNavigate } from "react-router-dom";
 
-function Header() {
-
-  const navigate = useNavigate();
-
-  const irCarrito =()=>{
-    navigate("/carrito");
-  };
-
+function Header({ toggleCarrito }) {
   return (
     <header className="custom-header">
       <div className="floating-header"> 
@@ -22,7 +14,7 @@ function Header() {
       </div>
       <div className="header-right">
         <FaSearch className="icon" />
-        <FaShoppingBag className="icon" onClick={irCarrito}/>
+        <FaShoppingBag className="icon" onClick={toggleCarrito}/>
       </div>
     </header>
   );

@@ -9,7 +9,7 @@ function Inicio(){
     return(
         <div>
             <SideBar />
-            <Header />
+            {/* <Header /> */}
         
         <div className="container text-center my-5">
             <h1 className="mb-4">Bienvenido a la Página de Inicio</h1>
