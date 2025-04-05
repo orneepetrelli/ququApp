@@ -100,6 +100,8 @@
 .stars {
     grid-row: 1/2;
     grid-column: 1/-1;
+    color: goldenrod;
+    /* color: rgb(197, 163, 76); */
 }
 
 .stars i {
@@ -130,15 +132,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #6f0009;
 }
 
 .add-cart:hover {
     background-color: var(--primary-color);
 }
 
-.add-cart i {
+.add-cart svg {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--primary-color); 
+    transition: color 0.4s ease;
+}
+
+.add-cart:hover svg {
+    transform: scale(1.05);
 }
 
 .content-card-product .price {
