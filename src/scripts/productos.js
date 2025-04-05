@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 import SideBar from "./sidebar";
+import TarjetasProductos from "./tarjetasProductos";
 
 function Productos(){
     return(
@@ -9,7 +10,8 @@ function Productos(){
             <Header/>
             <SideBar/>
             <div>
-                <h1>Hola soy Productos</h1>
+            <h1>Hola soy Productos</h1>
+                <TarjetasProductos/>
             </div>
             <Footer/>
         </div>
