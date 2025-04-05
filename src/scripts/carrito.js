@@ -5,6 +5,7 @@ import SideBar from "./sidebar";
 
 function Carrito() {
 
+  console.log("ABIERTOOOOO!!!!");
   const [cartItems, setCartItems] = useState([]);
 
   const [cartTotal, setCartTotal] = useState(0);
