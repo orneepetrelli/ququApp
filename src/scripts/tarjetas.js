@@ -4,9 +4,12 @@ import maquillaje from "../img/maquillaje.png";
 import pelo from "../img/pelo.jpeg";
 import ropa from "../img/ropa.jpeg";
 import unas from "../img/unas.jpeg";
+import {useNavigate} from "react-router-dom";
 
 const Tarjetas = () => {
   const scrollRef = useRef(null);
+  const navigate = useNavigate();
+
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -28,7 +31,7 @@ const Tarjetas = () => {
   ];
 
   const handleCardClick = (title) => {
-    console.log(`Clicked on: ${title}`);
+   navigate("/productos");
   };
 
   return (
@@ -43,12 +46,13 @@ const Tarjetas = () => {
             key={index}
             className="card-button"
             onClick={() => handleCardClick(item.title)}
+          
           >
             <div className="card-image-container">
               <img src={item.image} className="card-image" alt={item.title} />
               <div className="card-hover-text">{item.hoverText}</div>
             </div>
-            {/* <div className="card-title">{item.title}</div> */}
+            {}
           </button>
         ))}
       </div>
