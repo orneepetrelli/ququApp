@@ -28,9 +28,7 @@ const Tarjetas = () => {
   ];
 
   const handleCardClick = (title) => {
-   
     console.log(`Clicked on: ${title}`);
-
   };
 
   return (
@@ -41,11 +39,12 @@ const Tarjetas = () => {
         {items.map((item, index) => (
           <button
             key={index}
-            className="card-button" 
+            className="card-button"
             onClick={() => handleCardClick(item.title)}
           >
-            <img src={item.image} className="card-image" alt={item.title} />
-            {}
+            <div className="card-image-container"> {}
+              <img src={item.image} className="card-image" alt={item.title} />
+            </div>
             {}
           </button>
         ))}
