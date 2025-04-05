@@ -27,15 +27,27 @@ const Tarjetas = () => {
     { image: maquillaje, title: "Maquillaje" },
   ];
 
+  const handleCardClick = (title) => {
+   
+    console.log(`Clicked on: ${title}`);
+
+  };
+
   return (
     <div className="tarjetas-container">
       <button className="scroll-btn left" onClick={scrollLeft}>‹</button>
 
       <div className="tarjetas-card-container" ref={scrollRef}>
         {items.map((item, index) => (
-          <div className="card" key={index}>
-            <img src={item.image} className="card-image" />
-          </div>
+          <button
+            key={index}
+            className="card-button" 
+            onClick={() => handleCardClick(item.title)}
+          >
+            <img src={item.image} className="card-image" alt={item.title} />
+            {}
+            {}
+          </button>
         ))}
       </div>
 
