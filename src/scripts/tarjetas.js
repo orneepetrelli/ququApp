@@ -21,10 +21,10 @@ const Tarjetas = () => {
   };
 
   const items = [
-    { image: pelo, title: "Pelo" },
-    { image: ropa, title: "Ropa" },
-    { image: unas, title: "Uñas" },
-    { image: maquillaje, title: "Maquillaje" },
+    { image: pelo, title: "Pelo", hoverText: "Peluqueria" },
+    { image: ropa, title: "Ropa", hoverText: "Moda" },
+    { image: unas, title: "Uñas", hoverText: "Manicura" },
+    { image: maquillaje, title: "Maquillaje", hoverText: "Cosméticos" },
   ];
 
   const handleCardClick = (title) => {
@@ -33,7 +33,9 @@ const Tarjetas = () => {
 
   return (
     <div className="tarjetas-container">
-      <button className="scroll-btn left" onClick={scrollLeft}>‹</button>
+      <button className="scroll-btn left" onClick={scrollLeft}>
+        &lsaquo;
+      </button>
 
       <div className="tarjetas-card-container" ref={scrollRef}>
         {items.map((item, index) => (
@@ -42,15 +44,18 @@ const Tarjetas = () => {
             className="card-button"
             onClick={() => handleCardClick(item.title)}
           >
-            <div className="card-image-container"> {}
+            <div className="card-image-container">
               <img src={item.image} className="card-image" alt={item.title} />
+              <div className="card-hover-text">{item.hoverText}</div>
             </div>
-            {}
+            {/* <div className="card-title">{item.title}</div> */}
           </button>
         ))}
       </div>
 
-      <button className="scroll-btn right" onClick={scrollRight}>›</button>
+      <button className="scroll-btn right" onClick={scrollRight}>
+        &rsaquo;
+      </button>
     </div>
   );
 };
