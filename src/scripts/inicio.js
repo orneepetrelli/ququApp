@@ -3,15 +3,9 @@ import Tarjetas from "./tarjetas";
 import SideBar from "./sidebar";
 import Footer from "./footer";
 import '../styles/inicio.css';
-<<<<<<< HEAD
 import img1 from "../img/CAROUSEL1.jpg";
 import img2 from "../img/CAROUSEL2.jpg";
 import img3 from "../img/CAROUSEL3.jpg";
-=======
-import img1 from "../img/inicio_1.jpeg";
-import img2 from "../img/inicio_2.jpeg";
-import img3 from "../img/inicio_3.jpeg";
->>>>>>> b8a6de1d191b2c81a88f539db4f94b520e8f83fe
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -47,4 +41,4 @@ function Inicio() {
     );
 }
 
-export default Inicio;
+export default Inicio; 

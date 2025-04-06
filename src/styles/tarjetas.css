@@ -1,5 +1,6 @@
 .tarjetas-container {
   position: relative;
+  margin-top: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,6 +8,7 @@
   height: 650px;
   padding: 20px 0;
   overflow: hidden;
+  z-index: 1;
 }
 
 .tarjetas-card-container {

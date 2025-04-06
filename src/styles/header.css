@@ -90,3 +90,14 @@
   .icon:hover {
     transform: scale(1.1);
   }
+
+  .navbar-container {
+    position: absolute; /* o fixed si querés que siga al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.5); /* Opcional: semitransparente */
+    backdrop-filter: blur(6px); /* Opcional: efecto de difuminado detrás */
+  }
+  
