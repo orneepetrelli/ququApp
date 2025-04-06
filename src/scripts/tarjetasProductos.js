@@ -5,9 +5,12 @@ import uñas from "../img/uñas.jpeg";
 import zapas from "../img/zapas.jpeg";
 import "../styles/tarjetasProductos.css";
 import { FaShoppingBag, FaCheck } from "react-icons/fa";
+import {useNavigate} from "react-router-dom";
 
 function TarjetasProductos({ agregarAlCarrito }) {
+  const navigate = useNavigate();
   const [productoAgregadoId, setProductoAgregadoId] = useState(null);
+  const [tamañoSeleccionado, setTamañoSeleccionado] = useState({});
 
   const productos = [
     {
@@ -15,61 +18,76 @@ function TarjetasProductos({ agregarAlCarrito }) {
       nombre: "Traje Chanel",
       precio: 4.6,
       imagen: chanel,
-      descuento: "-13%"
+      descuento: "-13%",
+      tamaños: ["S", "M", "L"]
     },
     {
       id: 2,
       nombre: "Maquillaje",
       precio: 5.7,
       imagen: makeup,
-      descuento: "-22%"
+      descuento: "-22%",
+      tamaños: ["30ml", "50ml"]
     },
     {
       id: 3,
       nombre: "Uñas",
       precio: 3.85,
       imagen: uñas,
-      descuento: "-30%"
+      descuento: "-30%",
+      tamaños: ["Corta", "Media", "Larga"]
     },
     {
       id: 4,
       nombre: "Zapatillas",
       precio: 5.6,
       imagen: zapas,
-      descuento: null
+      descuento: null,
+      tamaños: ["36", "38", "40"]
     },
     {
         id: 5,
         nombre: "Zapatillas",
         precio: 5.6,
         imagen: zapas,
-        descuento: null
+        descuento: null,
+        tamaños: ["36", "38", "40"]
     },
     {
         id: 6,
         nombre: "Uñas",
         precio: 3.85,
         imagen: uñas,
-        descuento: "-30%"
+        descuento: "-30%",
+        tamaños: ["Corta", "Media", "Larga"]
     },
     {
         id: 7,
         nombre: "Maquillaje",
         precio: 5.7,
         imagen: makeup,
-        descuento: "-22%"
+        descuento: "-22%",
+        tamaños: ["30ml", "50ml"]
     },
     {
         id: 8,
         nombre: "Traje Chanel",
         precio: 4.6,
         imagen: chanel,
-        descuento: "-13%"
+        descuento: "-13%",
+        tamaños: ["S", "M", "L"]
       }
   ];
 
   const handleAgregarAlCarrito = (producto) => {
-    agregarAlCarrito(producto);
+    const tamaño = tamañoSeleccionado[producto.id];
+
+    if (!tamaño) {
+      alert("Por favor seleccioná un tamaño antes de agregar al carrito.");
+      return;
+    }
+
+    agregarAlCarrito({ ...producto, tamaño }); 
     setProductoAgregadoId(producto.id);
     setTimeout(() => setProductoAgregadoId(null), 700);
   };
@@ -85,15 +103,36 @@ function TarjetasProductos({ agregarAlCarrito }) {
             )}
             <div className="button-group">
               <span>
-                <i className="fa-regular fa-eye"></i>
+              <i className="fa-regular fa-eye" onClick={() => navigate("/informacionProducto")}></i>
               </span>
               <span>
-                <i className="fa-regular fa-heart"></i>
+                <i className="bx bx-bookmark-heart" onClick={() => navigate("/favoritos")}></i>
               </span>
               <span>
                 <i className="fa-solid fa-code-compare"></i>
               </span>
             </div>
+            <div className="sizes-container">
+                {producto.tamaños &&
+                  producto.tamaños.map((tamaño) => (
+                    <button
+                      key={tamaño}
+                      className={`tamaño-boton ${
+                        tamañoSeleccionado[producto.id] === tamaño
+                          ? "seleccionado"
+                          : ""
+                      }`}
+                      onClick={() =>
+                        setTamañoSeleccionado({
+                          ...tamañoSeleccionado,
+                          [producto.id]: tamaño
+                        })
+                      }
+                    >
+                      {tamaño}
+                    </button>
+                  ))}
+              </div>
           </div>
           <div className="content-card-product-wrapper">
             <div className="content-card-product">
