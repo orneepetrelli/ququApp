@@ -12,7 +12,7 @@ import Carrito from "./scripts/carrito";
 import Header from "./scripts/header";
 import Favoritos from "./scripts/favoritos";
 import SideBar from "./scripts/sidebar";
-// import "./App.css";
+import "./App.css";
 
 
 function App() {
