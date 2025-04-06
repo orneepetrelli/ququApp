@@ -1,28 +1,211 @@
+/* Fondo borroso detrás del carrito */
+/* .fondo {
+  background-color: rgb(255, 255, 255);
+  backdrop-filter: blur(12px);
+}
 .carrito-panel {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Oculto por defecto */
-    width: 300px;
-    height: 100vh;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    z-index: 100;
-  }
-  
-  .carrito-panel.visible {
-    right: 0; /* Se muestra cuando la clase 'visible' está presente */
-  }
-  
-  .cerrar-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
+  top: -100%;
+  left: 82.5%;
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  transition: top 0.4s ease-in-out;
+  z-index: 9999;
+  padding: 24px;
+  overflow-y: auto;
+  border-radius: 20px 20px 20px 20px;
+  position: fixed;
+}
+
+.carrito-panel.visible {
+  top: 50px;
+} */
+.header {
+  position: relative;
+  z-index: 1001; /* mayor que el fondo del carrito */
+}
+.fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 50px 20px 20px 20px;
+}
+
+.carrito-wrapper {
+  max-width: 420px;
+  width: 100%;
+}
+
+.carrito-panel {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 24px;
+  overflow-y: auto;
+  border-radius: 20px;
+  max-height: 90vh;
+}
+
+
+/* Botón de cerrar */
+.cerrar-btn {
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #6f0009;
+  transition: transform 0.2s;
+}
+
+.cerrar-btn:hover{
+  color: #b0323d;
+  transform: scale(1.1);
+}
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6f0009;
+  transition: transform 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+
+/* .cerrar-btn:hover{
+  border: #900;
+  background-color: #a00;
+  border-radius: 50%;
+} */
+
+/* Título */
+.titulo-carrito {
+  margin-top: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 3px solid #a00;
+  padding-bottom: 10px;
+}
+
+/* Texto de envío gratis */
+.envio-texto {
+  font-size: 13px;
+  margin-top: 12px;
+  font-style: italic;
+  color: #444;
+}
+
+/* Lista de productos */
+.lista-productos {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+/* Producto individual */
+.producto-carrito {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+.producto-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.detalle-producto {
+  flex-grow: 1;
+}
+
+.nombre-producto {
+  font-weight: bold;
+  margin: 0;
+}
+
+.precio-producto {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Control de cantidad */
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cantidad-control button {
+  background-color: #ddd;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.eliminar-btn {
+  background: none;
+  border: none;
+  color: #a00;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+/* Subtotal */
+.subtotal-carrito {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+  border-top: 1px dashed #bbb;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+/* Botón de checkout */
+.checkout-btn {
+  width: 100%;
+  background-color: #c00;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #900;
+}
+
+/* Carrito vacío */
+.carrito-vacio {
+  margin-top: 40px;
+  text-align: center;
+  font-style: italic;
+}
