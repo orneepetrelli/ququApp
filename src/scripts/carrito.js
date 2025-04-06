@@ -23,7 +23,7 @@ function Carrito({
 
   return (
     <div className="fondo">
-  <button className="cerrar-btn" onClick={toggleCarrito}>✕</button>
+      <button className="cerrar-btn" onClick={toggleCarrito}>✕</button>
       <div className="carrito-wrapper" onClick={(e) => e.stopPropagation()}>
         <div className="carrito-panel visible">
           <h2 className="titulo-carrito">MY BAG ({cartItems.length})</h2>
@@ -42,19 +42,27 @@ function Carrito({
                       className="producto-img"
                     />
                     <div className="detalle-producto">
-                      <p className="nombre-producto">{item.nombre}</p>
-                      <p className="precio-producto">${item.precio}</p>
-                      <div className="cantidad-control">
-                        <button onClick={() => disminuirCantidad(item.id)}>-</button>
-                        <span>{item.cantidad}</span>
-                        <button onClick={() => aumentarCantidad(item.id)}>+</button>
+                      <div className="nombre-producto">
+                        <p className="nombre">{item.nombre}</p>
+                        <p className="atributos">
+                          {item.color && <span className="color">{item.color}</span>}
+                          {item.talle && <span className="talle"> | {item.talle}</span>}
+                        </p>
                       </div>
-                      <button
-                        className="eliminar-btn"
-                        onClick={() => eliminarDelCarrito(item.id)}
-                      >
-                        Remove
-                      </button>
+                      <div className="precio-y-controles">
+                        <p className="precio-producto">${item.precio}</p>
+                        <div className="cantidad-control">
+                          <button onClick={() => disminuirCantidad(item.id)}>-</button>
+                          <span>{item.cantidad}</span>
+                          <button onClick={() => aumentarCantidad(item.id)}>+</button>
+                        </div>
+                        <button
+                          className="eliminar-btn"
+                          onClick={() => eliminarDelCarrito(item.id)}
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </li>
                 ))}

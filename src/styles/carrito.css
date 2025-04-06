@@ -1,8 +1,4 @@
-/* 
-.header {
-  position: relative;
-  z-index: 1001; 
-} */
+
 .fondo {
   position: fixed;
   top: 0;
@@ -50,12 +46,6 @@
 .cerrar-btn:hover{
   color:#6f0009;
 }
-/* .icon {
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #6f0009;
-  transition: transform 0.2s;
-} */
 
 .icon:hover {
   transform: scale(1.1);
@@ -101,15 +91,48 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
   gap: 10px;
 }
 
-.nombre-producto {
+/* .nombre-producto {
   margin: 0;
   font-size: 14px;
   min-width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: lowercase;
+  width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+} */
+
+.nombre-producto {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.nombre-producto .nombre {
+  font-size: 15px;
+  color: #222;
+  font-weight: 600;
+  margin: 0;
+}
+
+.nombre-producto .atributos {
+  font-size: 13px;
+  color: #666;
+  font-weight: normal;
+  margin-top: 1px;
+  display: flex;
+  gap: 6px;
+  text-transform: capitalize;
 }
 
 .precio-producto {
@@ -131,6 +154,15 @@
   padding: 4px 8px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.precio-y-controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .eliminar-btn {
