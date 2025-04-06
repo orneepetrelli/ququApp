@@ -36,7 +36,10 @@ import camisa_blanca_1 from "../img/camisa_m_blanco_1.jpg";
 import camisa_blanca_b from "../img/camisa_m_blanco_b.jpg";
 import camisa_blanca_f from "../img/camisa_m_blanco_f.jpg";
 
-function InfoProducto() {
+
+
+function InfoProducto({ agregarAlCarrito }) {
+
   var producto_nombre = "CAMISA CON LINO ZW COLLECTION";
   var producto_ingreso =82636;
   var producto_precio_sin_imp = formatearPrecio(producto_ingreso);
@@ -61,6 +64,24 @@ function InfoProducto() {
     const valor = parseInt(e.target.value);
     setCantidad(validarCantidad(valor));
   };
+  const handleAgregarAlCarrito = () => { //PODES CAMBIAR COMO SE MUESTRA EL MENSAJEEEEEEEEEE
+    if (!talleSeleccionado) {
+      alert("Por favor seleccioná un talle.");
+      return;
+    }
+  
+    const producto = {
+      nombre: producto_nombre,
+      precio: producto_ingreso + producto_ingreso * 0.21,
+      cantidad: cantidad,
+      color: colorSeleccionado,
+      talle: talleSeleccionado,
+      imagen: imagenesPorColor[colorSeleccionado][0], 
+    };
+  
+    agregarAlCarrito(producto);
+  };
+  
 
   return (
     <div className="Infoproducto-contenedor">
@@ -117,7 +138,10 @@ function InfoProducto() {
 
     <div ClassName="Producto-agregar">
 
-    <button className="Producto-agregar-carrito">Añadir al carrito</button>
+    <button className="Producto-agregar-carrito" onClick={handleAgregarAlCarrito}>
+  Añadir al carrito
+</button>
+
 
     <button className="Producto-agregar-favoritos"><i className='bx bx-heart'></i></button>
 
