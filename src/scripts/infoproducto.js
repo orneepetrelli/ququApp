@@ -81,7 +81,7 @@ function InfoProducto() {
     <div ClassName="Producto-elecciones">
     
     <div className="Producto-colores">
-      <span>Color: </span>
+    <span>Color: {colorSeleccionado}</span>
       <div className="color-box blanco" onClick={() => setColorSeleccionado("blanco")} />
             <div className="color-box rosa" onClick={() => setColorSeleccionado("rosa")} />
             <div className="color-box celeste" onClick={() => setColorSeleccionado("celeste")} />
