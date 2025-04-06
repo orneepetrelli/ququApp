@@ -56,12 +56,12 @@ function Carrito({
                           <span>{item.cantidad}</span>
                           <button onClick={() => aumentarCantidad(item.id)}>+</button>
                         </div>
-                        <button
+                        {/* <button
                           className="eliminar-btn"
                           onClick={() => eliminarDelCarrito(item.id)}
                         >
-                          Remove
-                        </button>
+                         <ion-icon name="trash-outline"></ion-icon>
+                        </button> */}
                       </div>
                     </div>
                   </li>
