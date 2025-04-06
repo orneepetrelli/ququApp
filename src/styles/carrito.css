@@ -1,32 +1,8 @@
-/* Fondo borroso detrás del carrito */
-/* .fondo {
-  background-color: rgb(255, 255, 255);
-  backdrop-filter: blur(12px);
-}
-.carrito-panel {
-  top: -100%;
-  left: 82.5%;
-  width: 100%;
-  height: auto;
-  max-width: 420px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
-  transform: translateX(-50%);
-  transition: top 0.4s ease-in-out;
-  z-index: 9999;
-  padding: 24px;
-  overflow-y: auto;
-  border-radius: 20px 20px 20px 20px;
-  position: fixed;
-}
-
-.carrito-panel.visible {
-  top: 50px;
-} */
+/* 
 .header {
   position: relative;
-  z-index: 1001; /* mayor que el fondo del carrito */
-}
+  z-index: 1001; 
+} */
 .fondo {
   position: fixed;
   top: 0;
@@ -74,23 +50,16 @@
 .cerrar-btn:hover{
   color:#6f0009;
 }
-.icon {
+/* .icon {
   font-size: 1.2rem;
   cursor: pointer;
   color: #6f0009;
   transition: transform 0.2s;
-}
+} */
 
 .icon:hover {
   transform: scale(1.1);
 }
-
-
-/* .cerrar-btn:hover{
-  border: #900;
-  background-color: #a00;
-  border-radius: 50%;
-} */
 
 .titulo-carrito {
   margin-top: 40px;
@@ -104,7 +73,7 @@
   font-size: 13px;
   margin-top: 12px;
   font-style: italic;
-  color: #444;
+  color: #30302e;
 }
 
 .lista-productos {
@@ -128,42 +97,50 @@
 }
 
 .detalle-producto {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
 }
 
 .nombre-producto {
-  font-weight: bold;
   margin: 0;
+  font-size: 14px;
+  min-width: 80px;
 }
 
 .precio-producto {
   margin: 5px 0;
   font-size: 14px;
-  color: #444;
+  color: #30302e;
 }
 
 .cantidad-control {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
 }
 
 .cantidad-control button {
-  background-color: #ddd;
+  background-color: inherit;
+  
   border: none;
   padding: 4px 8px;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 4px;
 }
 
 .eliminar-btn {
   background: none;
   border: none;
   color: #6f0009;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
-  margin-top: 6px;
+  margin: 0;
+  /* margin-top: 6px; */
 }
 
 .subtotal-carrito {

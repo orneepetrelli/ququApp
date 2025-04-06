@@ -1,4 +1,4 @@
-.custom-carousel {
+/* .custom-carousel {
     position: static;
     top: 0;
     z-index: 0;
@@ -20,4 +20,9 @@
   .carousel-indicators .active {
     background-color: white;
   }
-  
+   */
+
+   .carousel img {
+    max-height: 500px;
+    object-fit: cover;
+  }
