@@ -5,7 +5,8 @@ import {
   formatearPrecio,
   aumentarCantidad,
   disminuirCantidad,
-  validarCantidad
+  validarCantidad,
+  buscarProductoPorColorYTalle
 } from "./auxiliar.js";
 
 
@@ -58,6 +59,37 @@ function InfoProducto({ agregarAlCarrito }) {
 
   const talles = ["XS", "S", "M", "L", "XL"];
 
+  const producto = [
+    // ROJO
+    { id: 11, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rojo_f, color: "rojo", talle: "XS" },
+    { id: 12, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rojo_f, color: "rojo", talle: "S" },
+    { id: 13, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rojo_f, color: "rojo", talle: "M" },
+    { id: 14, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rojo_f, color: "rojo", talle: "L" },
+    { id: 15, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rojo_f, color: "rojo", talle: "XL" },
+  
+    // ROSA
+    { id: 21, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rosa_f, color: "rosa", talle: "XS" },
+    { id: 22, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rosa_f, color: "rosa", talle: "S" },
+    { id: 23, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rosa_f, color: "rosa", talle: "M" },
+    { id: 24, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rosa_f, color: "rosa", talle: "L" },
+    { id: 25, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_rosa_f, color: "rosa", talle: "XL" },
+  
+    // CELESTE
+    { id: 31, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_celeste_f, color: "celeste", talle: "XS" },
+    { id: 32, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_celeste_f, color: "celeste", talle: "S" },
+    { id: 33, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_celeste_f, color: "celeste", talle: "M" },
+    { id: 34, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_celeste_f, color: "celeste", talle: "L" },
+    { id: 35, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_celeste_f, color: "celeste", talle: "XL" },
+  
+    // BLANCO
+    { id: 41, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_blanca_f, color: "blanco", talle: "XS" },
+    { id: 42, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_blanca_f, color: "blanco", talle: "S" },
+    { id: 43, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_blanca_f, color: "blanco", talle: "M" },
+    { id: 44, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_blanca_f, color: "blanco", talle: "L" },
+    { id: 45, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_blanca_f, color: "blanco", talle: "XL" },
+  ];
+  
+
   const handleAumentar = () => setCantidad(aumentarCantidad(cantidad));
   const handleDisminuir = () => setCantidad(disminuirCantidad(cantidad));
   const handleCambioManual = (e) => {
@@ -69,17 +101,10 @@ function InfoProducto({ agregarAlCarrito }) {
       alert("Por favor seleccioná un talle.");
       return;
     }
+
+    const productoSeleccionado = buscarProductoPorColorYTalle(producto, colorSeleccionado, talleSeleccionado);
   
-    const producto = {
-      nombre: producto_nombre,
-      precio: producto_ingreso + producto_ingreso * 0.21,
-      cantidad: cantidad,
-      color: colorSeleccionado,
-      talle: talleSeleccionado,
-      imagen: imagenesPorColor[colorSeleccionado][0], 
-    };
-  
-    agregarAlCarrito(producto);
+    agregarAlCarrito(productoSeleccionado);
   };
   
 
