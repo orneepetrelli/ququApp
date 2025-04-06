@@ -1,13 +1,170 @@
-.Producto-talles button {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  margin: 5px;
-  padding: 8px;
+.Infoproducto-contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap; 
+
+  background-color: #fdfcf9;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #6f0009;
+}
+
+.Producto-imagen {
+  flex: 1;
+  max-width: 500px;
+}
+
+.Producto-imagen img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.Producto-contenedor-info {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Producto-nombre {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.Producto-precio {
+  font-size: 22px;
+  font-weight: 500;
+  color: #000;
+}
+
+.Producto-precio-sin-imp {
+  font-size: 14px;
+  color: #888;
+}
+
+.Producto-cuotas {
+  font-size: 15px;
+  color: #444;
+}
+
+.Producto-colores,
+.Producto-talles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.color-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #aaa;
   cursor: pointer;
 }
 
+.color-box.blanco { background-color: #fff; }
+.color-box.rosa { background-color: #f8c1c1; }
+.color-box.celeste { background-color: #add8e6; }
+.color-box.rojo { background-color: #7c0f0f; }
+
+.Producto-talles button {
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  border-radius: 50%;
+
+  background-color: white;
+  color: #6f0009;
+  border: 2px solid #6f0009;
+  font-weight: bold;
+
+ 
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 0;
+}
+
 .Producto-talles .talle-seleccionado {
-  background-color: red;
+  border: white;
+  background-color: #6f0009;
   color: white;
+}
+
+.Producto-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.Producto-cantidad button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: #7c0f0f;
+  color: white;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.Producto-cantidad button:hover {
+  background-color: #a31414;
+}
+
+.Producto-cantidad input {
+  width: 50px;
+  height: 32px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.Producto-agregar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.Producto-agregar-carrito {
+  padding: 10px 20px;
+  background-color: #7c0f0f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.Producto-agregar-carrito:hover {
+  background-color: #a31414;
+}
+
+.Producto-agregar-favoritos {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #7c0f0f;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.Producto-agregar-favoritos:hover {
+  transform: scale(1.2);
 }

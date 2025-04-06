@@ -90,6 +90,8 @@ function InfoProducto({ agregarAlCarrito }) {
       <CarouselProducto imagenes={imagenesPorColor[colorSeleccionado]} />
       </div>
 
+    <div className="Producto-contenedor-info">
+
     <div className="Producto-info">
 
     <p className="Producto-nombre">{producto_nombre}</p>
@@ -99,7 +101,7 @@ function InfoProducto({ agregarAlCarrito }) {
 
     </div>
 
-    <div ClassName="Producto-elecciones">
+    <div className="Producto-elecciones">
     
     <div className="Producto-colores">
     <span>Color: {colorSeleccionado}</span>
@@ -136,7 +138,7 @@ function InfoProducto({ agregarAlCarrito }) {
 
     </div> {/*Clase Elecciones*/}
 
-    <div ClassName="Producto-agregar">
+    <div className="Producto-agregar">
 
     <button className="Producto-agregar-carrito" onClick={handleAgregarAlCarrito}>
   Añadir al carrito
@@ -146,6 +148,9 @@ function InfoProducto({ agregarAlCarrito }) {
     <button className="Producto-agregar-favoritos"><i className='bx bx-heart'></i></button>
 
     </div> {/*Clase Agregar*/}
+
+    </div> {/*Clase contenedora de información*/}
+
 
     </div> //Contenedor Info Producto
   );
