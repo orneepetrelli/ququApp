@@ -18,10 +18,12 @@ function App() {
   //   setCarritoVisible(!carritoVisible);
   // };
 
-  const [visible, setVisible] = useState(false);
+  const [carritoVisible, setCarritoVisible] = useState(false);
+  const toggleCarrito = () => setCarritoVisible(!carritoVisible);
+  
   const [cartItems, setCartItems] = useState([]);
 
-  const toggleCarrito = () => setVisible(!visible);
+  // const toggleCarrito = () => setVisible(!visible);
 
   const agregarAlCarrito = (producto) => {
     const existe = cartItems.find((item) => item.id === producto.id);
@@ -62,15 +64,15 @@ function App() {
 
   return (
     <Router>
-      <Header toggleCarrito={toggleCarrito} />
-      <Carrito
-        visible={visible}
-        toggleCarrito={toggleCarrito}
-        cartItems={cartItems}
-        aumentarCantidad={aumentarCantidad}
-        disminuirCantidad={disminuirCantidad}
-        eliminarDelCarrito={eliminarDelCarrito}
-      />
+     <Header toggleCarrito={toggleCarrito} visible={carritoVisible} />
+<Carrito
+  visible={carritoVisible}
+  toggleCarrito={toggleCarrito}
+  cartItems={cartItems}
+  aumentarCantidad={aumentarCantidad}
+  disminuirCantidad={disminuirCantidad}
+  eliminarDelCarrito={eliminarDelCarrito}
+/>
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/login" element={<Login />} />
