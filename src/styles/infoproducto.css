@@ -11,8 +11,8 @@
   }
 
   .product-img {
-    width: 300px;
-    height: 350px;
+    width: 400px;
+    height: 450px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -55,9 +55,10 @@
     border: 2px solid white;
   }
   
-  .color-box.black { background-color: black; }
-  .color-box.purple { background-color: #cc7ac6; }
-  .color-box.green { background-color: #3cb371; }
+  .color-box.blanco { background-color: white; }
+  .color-box.rosa { background-color: #F6D7D4; }
+  .color-box.celeste { background-color: #B0D3EF; }
+  .color-box.rojo {background-color:#7D2D3C;}
   
   .size {
     background-color: white;
@@ -109,7 +110,7 @@
     gap: 2rem;
     padding: 2rem;
     border-radius: 30px;
-    background-color: #fff0f0;
+    background-color: #6f0009;
   
     /* Estas líneas son clave para centrar y limitar */
     max-width: 1000px;
