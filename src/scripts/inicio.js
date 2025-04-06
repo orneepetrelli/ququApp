@@ -3,9 +3,9 @@ import Tarjetas from "./tarjetas";
 import SideBar from "./sidebar";
 import Footer from "./footer";
 import '../styles/inicio.css';
-import img1 from "../img/CAROUSEL1.jpg";
-import img2 from "../img/CAROUSEL2.jpg";
-import img3 from "../img/CAROUSEL3.jpg";
+import img1 from "../img/inicio_1.jpeg";
+import img2 from "../img/inicio_2.jpeg";
+import img3 from "../img/inicio_3.jpeg";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
