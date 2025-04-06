@@ -1,45 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Tarjetas from "./tarjetas";
 import SideBar from "./sidebar";
 import Footer from "./footer";
 import '../styles/inicio.css';
 
 function Inicio() {
-    const [progress, setProgress] = useState(0);
-
-    useEffect(() => {
-        const intervalTime = 5000; 
-        const increment = 100 / (intervalTime / 100);
-
-        let interval = setInterval(() => {
-            setProgress((prev) => (prev >= 100 ? 0 : prev + increment));
-        }, 100);
-
-        const carousel = document.querySelector("#carouselExampleIndicators");
-      
-        const handleSlide = () => {
-            setProgress(0); 
-        };
-
-        carousel.addEventListener("slide.bs.carousel", handleSlide);
-
-        return () => {
-            clearInterval(interval);
-            carousel.removeEventListener("slide.bs.carousel", handleSlide);
-        };
-    }, []);
-
     return (
         <div style={{ position: "relative" }}>
             <SideBar />
 
             {}
             <div id="carouselExampleIndicators" className="carousel slide custom-carousel" data-bs-ride="carousel">
-                {}
-                <div className="progress-container">
-                    <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-                </div>
-
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
