@@ -15,9 +15,9 @@ function CarouselProducto({ imagenes }) {
   
     return (
       <div className="carousel">
-        <button onClick={anterior} className="carousel-btn">⬅</button>
+        <button onClick={anterior} className="carousel-btn"><i className='bx bx-chevron-left'></i></button>
         <img src={imagenes[index]} alt={`Producto ${index + 1}`} className="carousel-img" />
-        <button onClick={siguiente} className="carousel-btn">➡</button>
+        <button onClick={siguiente} className="carousel-btn"><i className='bx bx-chevron-right'></i></button>
       </div>
     );
   }
