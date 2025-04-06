@@ -1,6 +1,6 @@
-.product-card {
+/* .product-card {
     display: flex;
-    background-color: #720202; /* bordó */
+    background-color: #720202;
     color: white;
     border-radius: 40px;
     padding: 2rem;
@@ -8,19 +8,18 @@
     max-width: 900px;
     margin: 2rem auto;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  }
+  } */
 
-  .product-img {
-    width: 400px;
-    height: 450px;
+  /* .product-img {
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    /*border-radius: 30px;*/
   }
-  
+   */
   .product-img img {
     width: 100%;
     height: 100%;
@@ -114,19 +113,20 @@
   
     
     max-width: 1000px;
-    margin: 2rem auto; /* centra horizontalmente */
+    margin: 2rem auto; 
   }
   
   
   .imagen-producto {
     flex: 1;
-    max-width: 500px;
-    min-height: 600px;
+    width: 100%;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
+   
   .info-producto {
     flex: 2;
     display: flex;
@@ -151,17 +151,16 @@
     height: 600px; 
     border-radius: 30px;
     overflow: hidden;
-    background-color: #fff; 
   }
   
   .carousel img {
-    height: 100%;
+    height: 600px;
+    width: 100%;
     object-fit: contain; 
     object-position: center;
     background-color: #fff; 
-    /* border-radius: 30px; 👈 Esto lo quitás */
   }
-
+/* 
   .carousel,
 .carousel-inner,
 .carousel-item {
@@ -183,4 +182,15 @@
 
   .carousel-item {
     transition: opacity 0.6s ease-in-out;
-  }
+  } */
+
+.ahhhh{
+  /* display: flex;
+  margin-left: 0;
+  margin-right: 0; */
+  background: transparent !important;
+}
+/* 
+.carousel-control-prev{
+  background: transparent !important;
+} */
