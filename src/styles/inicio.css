@@ -1,0 +1,42 @@
+
+.custom-carousel {
+    position: static;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+
+  .custom-carousel .carousel-item img {
+    object-fit: cover;
+    height: 100vh;
+  }
+  
+
+  .carousel-indicators button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+  }
+  
+  .carousel-indicators .active {
+    background-color: white;
+  }
+
+.progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+ 
+  .progress-bar {
+    height: 100%;
+    background-color: #6f0009; 
+    transition: width 0.3s ease-in-out; 
+  }
