@@ -1,17 +1,15 @@
 import React from "react";
-import Header from "./header";
 import Footer from "./footer";
-import SideBar from "./sidebar";
 import TarjetasProductos from "./tarjetasProductos";
+import SideBar from "./sidebar";
 
-function Productos(){
+function Productos({ agregarAlCarrito }){
     return(
         <div>
-            <Header/>
             <SideBar/>
             <div>
             <h1>Hola soy Productos</h1>
-                <TarjetasProductos/>
+            <TarjetasProductos agregarAlCarrito={agregarAlCarrito} />
             </div>
             <Footer/>
         </div>
