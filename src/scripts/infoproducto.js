@@ -1,5 +1,6 @@
 import '../styles/infoproducto.css';
 import CarouselProducto from "./carouselproducto.js";
+import Reviews from "./reviews.js";
 import React, { useState } from "react";
 import {
   formatearPrecio,
@@ -89,7 +90,11 @@ function InfoProducto({ agregarAlCarrito }) {
     { id: 45, nombre: "CAMISA CON LINO ZW COLLECTION", precio: producto_precio, imagen: camisa_blanca_f, color: "blanco", descuento: null, talle: "XL" },
   ];
   
-  
+  const comentarios = [
+    { nombre: "Ana", texto: "Excelente calidad y calce", puntuacion: 5 },
+    { nombre: "Lucas", texto: "Llegó rápido, muy conforme", puntuacion: 4 },
+    { nombre: "Sofi", texto: "Me gustó el color, aunque pedí una talla más", puntuacion: 4 },
+  ];
 
   const handleAumentar = () => setCantidad(aumentarCantidad(cantidad));
   const handleDisminuir = () => setCantidad(disminuirCantidad(cantidad));
@@ -176,6 +181,8 @@ function InfoProducto({ agregarAlCarrito }) {
     </div> {/*Clase Agregar*/}
 
     </div> {/*Clase contenedora de información*/}
+
+    <Reviews comentarios={comentarios} />
 
 
     </div> //Contenedor Info Producto
