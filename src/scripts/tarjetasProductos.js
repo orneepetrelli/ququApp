@@ -5,12 +5,12 @@ import uñas from "../img/uñas.jpeg";
 import zapas from "../img/zapas.jpeg";
 import "../styles/tarjetasProductos.css";
 import { FaShoppingBag, FaCheck } from "react-icons/fa";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function TarjetasProductos({ agregarAlCarrito }) {
   const navigate = useNavigate();
   const [productoAgregadoId, setProductoAgregadoId] = useState(null);
-  const [tamañoSeleccionado, setTamañoSeleccionado] = useState({});
+  const [talleSeleccionado, setTalleSeleccionado] = useState({});
 
   const productos = [
     {
@@ -19,7 +19,7 @@ function TarjetasProductos({ agregarAlCarrito }) {
       precio: 4.6,
       imagen: chanel,
       descuento: "-13%",
-      tamaños: ["S", "M", "L"]
+      talles: ["S", "M", "L"]
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ function TarjetasProductos({ agregarAlCarrito }) {
       precio: 5.7,
       imagen: makeup,
       descuento: "-22%",
-      tamaños: ["30ml", "50ml"]
+      talles: ["30ml", "50ml"]
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ function TarjetasProductos({ agregarAlCarrito }) {
       precio: 3.85,
       imagen: uñas,
       descuento: "-30%",
-      tamaños: ["Corta", "Media", "Larga"]
+      talles: ["Corta", "Media", "Larga"]
     },
     {
       id: 4,
@@ -43,51 +43,51 @@ function TarjetasProductos({ agregarAlCarrito }) {
       precio: 5.6,
       imagen: zapas,
       descuento: null,
-      tamaños: ["36", "38", "40"]
+      talles: ["36", "38", "40"]
     },
     {
-        id: 5,
-        nombre: "Zapatillas",
-        precio: 5.6,
-        imagen: zapas,
-        descuento: null,
-        tamaños: ["36", "38", "40"]
+      id: 5,
+      nombre: "Zapatillas",
+      precio: 5.6,
+      imagen: zapas,
+      descuento: null,
+      talles: ["36", "38", "40"]
     },
     {
-        id: 6,
-        nombre: "Uñas",
-        precio: 3.85,
-        imagen: uñas,
-        descuento: "-30%",
-        tamaños: ["Corta", "Media", "Larga"]
+      id: 6,
+      nombre: "Uñas",
+      precio: 3.85,
+      imagen: uñas,
+      descuento: "-30%",
+      talles: ["Corta", "Media", "Larga"]
     },
     {
-        id: 7,
-        nombre: "Maquillaje",
-        precio: 5.7,
-        imagen: makeup,
-        descuento: "-22%",
-        tamaños: ["30ml", "50ml"]
+      id: 7,
+      nombre: "Maquillaje",
+      precio: 5.7,
+      imagen: makeup,
+      descuento: "-22%",
+      talles: ["30ml", "50ml"]
     },
     {
-        id: 8,
-        nombre: "Traje Chanel",
-        precio: 4.6,
-        imagen: chanel,
-        descuento: "-13%",
-        tamaños: ["S", "M", "L"]
-      }
+      id: 8,
+      nombre: "Traje Chanel",
+      precio: 4.6,
+      imagen: chanel,
+      descuento: "-13%",
+      talles: ["S", "M", "L"]
+    }
   ];
 
   const handleAgregarAlCarrito = (producto) => {
-    const tamaño = tamañoSeleccionado[producto.id];
+    const talle = talleSeleccionado[producto.id];
 
-    if (!tamaño) {
-      alert("Por favor seleccioná un tamaño antes de agregar al carrito.");
+    if (!talle) {
+      alert("Por favor seleccioná un talle antes de agregar al carrito.");
       return;
     }
 
-    agregarAlCarrito({ ...producto, tamaño }); 
+    agregarAlCarrito({ ...producto, talle });
     setProductoAgregadoId(producto.id);
     setTimeout(() => setProductoAgregadoId(null), 700);
   };
@@ -103,36 +103,42 @@ function TarjetasProductos({ agregarAlCarrito }) {
             )}
             <div className="button-group">
               <span>
-              <i className="fa-regular fa-eye" onClick={() => navigate("/informacionProducto")}></i>
+                <i
+                  className="fa-regular fa-eye"
+                  onClick={() => navigate("/informacionProducto")}
+                ></i>
               </span>
               <span>
-                <i className="bx bx-bookmark-heart" onClick={() => navigate("/favoritos")}></i>
+                <i
+                  className="bx bx-bookmark-heart"
+                  onClick={() => navigate("/favoritos")}
+                ></i>
               </span>
               <span>
                 <i className="fa-solid fa-code-compare"></i>
               </span>
             </div>
             <div className="sizes-container">
-                {producto.tamaños &&
-                  producto.tamaños.map((tamaño) => (
-                    <button
-                      key={tamaño}
-                      className={`tamaño-boton ${
-                        tamañoSeleccionado[producto.id] === tamaño
-                          ? "seleccionado"
-                          : ""
-                      }`}
-                      onClick={() =>
-                        setTamañoSeleccionado({
-                          ...tamañoSeleccionado,
-                          [producto.id]: tamaño
-                        })
-                      }
-                    >
-                      {tamaño}
-                    </button>
-                  ))}
-              </div>
+              {producto.talles &&
+                producto.talles.map((talle) => (
+                  <button
+                    key={talle}
+                    className={`tamaño-boton ${
+                      talleSeleccionado[producto.id] === talle
+                        ? "seleccionado"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      setTalleSeleccionado({
+                        ...talleSeleccionado,
+                        [producto.id]: talle
+                      })
+                    }
+                  >
+                    {talle}
+                  </button>
+                ))}
+            </div>
           </div>
           <div className="content-card-product-wrapper">
             <div className="content-card-product">
