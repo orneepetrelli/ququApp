@@ -1,0 +1,13 @@
+.Producto-talles button {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.Producto-talles .talle-seleccionado {
+  background-color: red;
+  color: white;
+}

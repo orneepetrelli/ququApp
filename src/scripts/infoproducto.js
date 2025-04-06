@@ -1,6 +1,14 @@
 import '../styles/infoproducto.css';
 import CarouselProducto from "./carouselproducto.js";
 import React, { useState } from "react";
+import {
+  formatearPrecio,
+  aumentarCantidad,
+  disminuirCantidad,
+  validarCantidad
+} from "./auxiliar.js";
+
+
 
 //Imágenes import ROJO
 import camisa_rojo_1 from "../img/camisa_m_rojo_1.jpg";
@@ -28,56 +36,120 @@ import camisa_blanca_1 from "../img/camisa_m_blanco_1.jpg";
 import camisa_blanca_b from "../img/camisa_m_blanco_b.jpg";
 import camisa_blanca_f from "../img/camisa_m_blanco_f.jpg";
 
-function Producto() {
-    const [colorSeleccionado, setColorSeleccionado] = useState("rojo");
 
-    const imagenesPorColor = {
-      rojo: [camisa_rojo_f,camisa_rojo_b,camisa_rojo_1,camisa_rojo_2,camisa_rojo_3,camisa_rojo_4],
-      rosa: [camisa_rosa_f,camisa_rosa_b,camisa_rosa_1,camisa_rosa_2,camisa_rosa_3,camisa_rosa_4],
-      blanco: [camisa_blanca_f,camisa_blanca_b,camisa_blanca_1],
-      celeste: [camisa_celeste_f,camisa_celeste_b,camisa_celeste_1,camisa_celeste_2,camisa_celeste_3,camisa_celeste_4]
+
+function InfoProducto({ agregarAlCarrito }) {
+
+  var producto_nombre = "CAMISA CON LINO ZW COLLECTION";
+  var producto_ingreso =82636;
+  var producto_precio_sin_imp = formatearPrecio(producto_ingreso);
+  var producto_precio = formatearPrecio(producto_ingreso + producto_ingreso * 0.21);
+  
+  const [colorSeleccionado, setColorSeleccionado] = useState("rojo");
+  const [talleSeleccionado, setTalleSeleccionado] = useState("");
+  const [cantidad, setCantidad] = useState(1);
+
+  const imagenesPorColor = {
+    rojo: [camisa_rojo_f,camisa_rojo_b,camisa_rojo_1,camisa_rojo_2,camisa_rojo_3,camisa_rojo_4],
+    rosa: [camisa_rosa_f,camisa_rosa_b,camisa_rosa_1,camisa_rosa_2,camisa_rosa_3,camisa_rosa_4],
+    blanco: [camisa_blanca_f,camisa_blanca_b,camisa_blanca_1],
+    celeste: [camisa_celeste_f,camisa_celeste_b,camisa_celeste_1,camisa_celeste_2,camisa_celeste_3,camisa_celeste_4]
+  };
+
+  const talles = ["XS", "S", "M", "L", "XL"];
+
+  const handleAumentar = () => setCantidad(aumentarCantidad(cantidad));
+  const handleDisminuir = () => setCantidad(disminuirCantidad(cantidad));
+  const handleCambioManual = (e) => {
+    const valor = parseInt(e.target.value);
+    setCantidad(validarCantidad(valor));
+  };
+  const handleAgregarAlCarrito = () => { //PODES CAMBIAR COMO SE MUESTRA EL MENSAJEEEEEEEEEE
+    if (!talleSeleccionado) {
+      alert("Por favor seleccioná un talle.");
+      return;
+    }
+  
+    const producto = {
+      nombre: producto_nombre,
+      precio: producto_ingreso + producto_ingreso * 0.21,
+      cantidad: cantidad,
+      color: colorSeleccionado,
+      talle: talleSeleccionado,
+      imagen: imagenesPorColor[colorSeleccionado][0], 
     };
   
-    return (
-      <div className="producto-container">
-        <div className="imagen-producto">
-          <CarouselProducto imagenes={imagenesPorColor[colorSeleccionado]} />
-        </div>
+    agregarAlCarrito(producto);
+  };
   
-        <div className="product-info">
-          <h2>Remera Tee shirt</h2>
-          <p className="price">$70.000</p>
-          <p className="cuotas">Hasta 6 cuotas de 80 sin interés</p>
-  
-          <div className="colors">
-            <span>Color:</span>
-            <div className="color-box blanco" onClick={() => setColorSeleccionado("blanco")} />
+
+  return (
+    <div className="Infoproducto-contenedor">
+
+      <div className="Producto-imagen">
+      <CarouselProducto imagenes={imagenesPorColor[colorSeleccionado]} />
+      </div>
+
+    <div className="Producto-info">
+
+    <p className="Producto-nombre">{producto_nombre}</p>
+    <p className="Producto-precio">{producto_precio} ARS</p>
+    <p className="Producto-precio-sin-imp">*Precio sin impuestos nacionales {producto_precio_sin_imp} ARS</p>
+    <p className="Producto-cuotas">Hasta 6 cuotas sin interés</p>
+
+    </div>
+
+    <div ClassName="Producto-elecciones">
+    
+    <div className="Producto-colores">
+    <span>Color: {colorSeleccionado}</span>
+      <div className="color-box blanco" onClick={() => setColorSeleccionado("blanco")} />
             <div className="color-box rosa" onClick={() => setColorSeleccionado("rosa")} />
             <div className="color-box celeste" onClick={() => setColorSeleccionado("celeste")} />
             <div className="color-box rojo" onClick={() => setColorSeleccionado("rojo")} />
-          </div>
-  
-          <div className="sizes">
-            <span>Talles:</span>
-            <span className="size">XS</span>
-            <span className="size">S</span>
-            <span className="size">M</span>
-            <span className="size">L</span>
-            <span className="size">XL</span>
-            <span className="size">XXL</span>
-          </div>
-  
-          <button className="cart-btn">Añadir al carrito</button>
-          <span className="heart">🤍</span>
-  
-          <p className="vendedor">Vendido por: <strong>ZARA</strong></p>
-  
-          <div className="stars">
-            ★★★★★
-          </div>
-        </div>
-      </div>
-    );
+    </div>
+
+    <div className="Producto-talles">
+      <span>Talles:</span>
+      {talles.map((talle) => (
+        <button
+          key={talle}
+          onClick={() => setTalleSeleccionado(talle)}
+          className={talleSeleccionado === talle ? "talle-seleccionado" : ""}
+        >
+          {talle}
+        </button>
+      ))}
+    </div>
+
+    <div className="Producto-cantidad">
+      <span>Cantidad:</span>
+      <button onClick={handleDisminuir}>-</button>
+      <input
+        type="number"
+        min="1"
+        value={cantidad}
+        onChange={handleCambioManual}
+      />
+      <button onClick={handleAumentar}>+</button>
+    </div>
+
+    </div> {/*Clase Elecciones*/}
+
+    <div ClassName="Producto-agregar">
+
+    <button className="Producto-agregar-carrito" onClick={handleAgregarAlCarrito}>
+  Añadir al carrito
+</button>
+
+
+    <button className="Producto-agregar-favoritos"><i className='bx bx-heart'></i></button>
+
+    </div> {/*Clase Agregar*/}
+
+    </div> //Contenedor Info Producto
+  );
+
 }
 
-export default Producto;
+export default InfoProducto;

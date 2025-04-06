@@ -1,55 +1,25 @@
-import React from "react";
-import '../styles/infoproducto.css';
+import React, {useState} from "react";
+import '../styles/carouselproducto.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function CarouselProducto({ imagenes }) {
-  return (
-    <div
-      id="carouselProducto"
-      className="carousel slide carousel-fade"
-      data-bs-ride="carousel"
-      style={{ backgroundColor: "#fff", borderRadius: "20px" }} // fondo blanco para evitar flashes
-    >
-      <div className="carousel-inner">
-        {imagenes.map((img, index) => (
-          <div
-            className={`carousel-item ${index === 0 ? "active" : ""}`}
-            key={index}
-          >
-            <img
-  src={img}
-  className="d-block w-100 carousel-img"
-  alt={`Imagen ${index + 1}`}
-  style={{
-    maxHeight: "600px",
-    objectFit: "contain",
-    objectPosition: "center",
-    backgroundColor: "white",
-    margin: "auto"
-  }}
-/>
-
-          </div>
-        ))}
+    const [index, setIndex] = useState(0);
+  
+    const anterior = () => {
+      setIndex((prevIndex) => (prevIndex === 0 ? imagenes.length - 1 : prevIndex - 1));
+    };
+  
+    const siguiente = () => {
+      setIndex((prevIndex) => (prevIndex === imagenes.length - 1 ? 0 : prevIndex + 1));
+    };
+  
+    return (
+      <div className="carousel">
+        <button onClick={anterior} className="carousel-btn">⬅</button>
+        <img src={imagenes[index]} alt={`Producto ${index + 1}`} className="carousel-img" />
+        <button onClick={siguiente} className="carousel-btn">➡</button>
       </div>
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselProducto"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" />
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselProducto"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon" />
-      </button>
-      </div>
-  );
-}
-
-export default CarouselProducto;
+    );
+  }
+  
+  export default CarouselProducto;
