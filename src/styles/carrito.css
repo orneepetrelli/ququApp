@@ -49,12 +49,13 @@
 
 .carrito-panel {
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background-color: #F5F4F0;
   box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   padding: 24px;
   overflow-y: auto;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
   max-height: 90vh;
 }
 
@@ -69,12 +70,11 @@
   font-size: 22px;
   cursor: pointer;
   color: #6f0009;
-  transition: transform 0.2s;
+   transition: transform 0.2s;
 }
 
 .cerrar-btn:hover{
   color: #b0323d;
-  transform: scale(1.1);
 }
 .icon {
   font-size: 1.2rem;

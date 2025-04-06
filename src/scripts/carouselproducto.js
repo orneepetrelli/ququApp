@@ -32,7 +32,6 @@ function CarouselProducto({ imagenes }) {
           </div>
         ))}
       </div>
-
       <button
         className="carousel-control-prev"
         type="button"
@@ -49,7 +48,7 @@ function CarouselProducto({ imagenes }) {
       >
         <span className="carousel-control-next-icon" />
       </button>
-    </div>
+      </div>
   );
 }
 
