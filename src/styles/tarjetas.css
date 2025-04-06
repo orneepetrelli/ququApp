@@ -1,6 +1,6 @@
 .tarjetas-container {
   position: relative;
-  margin-top: 65vh;
+  /* margin-top: 65vh; LUCHO COMO ME VAS A PONER ESE MARGIN-TOP?!?!?!?!?!??!!?!?*/ 
   display: flex;
   align-items: center;
   justify-content: center;
