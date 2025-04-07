@@ -81,7 +81,7 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/login" element={<Login />} />
         <Route path="/productos" element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
-
+        <Route path="/favoritos" element={<Favoritos/>}/>
         <Route path="/informacionProducto" element={<InfoProducto agregarAlCarrito={agregarAlCarrito}/>} />
         {/* <Route path="/carrito" element={<Carrito />} /> */}
       </Routes>

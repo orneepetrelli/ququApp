@@ -2,10 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   background-color: transparent;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   z-index: 10;
   /* border-bottom: 1px solid #eee; */
 }
@@ -92,11 +95,11 @@
   }
 
   .navbar-container {
-    position: absolute; /* o fixed si querés que siga al hacer scroll */
+    position: fixed; /* o fixed si querés que siga al hacer scroll */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 9999;
     background-color: rgba(255, 255, 255, 0.5); /* Opcional: semitransparente */
     backdrop-filter: blur(6px); /* Opcional: efecto de difuminado detrás */
   }

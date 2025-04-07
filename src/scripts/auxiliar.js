@@ -19,3 +19,9 @@ export function formatearPrecio(precio) {
     return nuevaCantidad >= 1 ? nuevaCantidad : 1;
   }
 
+  export function buscarProductoPorColorYTalle(productos, color, talle) {
+    return productos.find(
+      (prod) => prod.color === color && prod.talle === talle
+    );
+  }
+

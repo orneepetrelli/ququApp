@@ -62,8 +62,8 @@
 
 .button-group span {
     border: 1px solid #6f0009 ;
-    background: rgba(255, 255, 255, 0.578);
-    padding: 0.8rem;
+    background: #f5f4f0b0;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,7 +77,7 @@
 }
 
 .button-group span i {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #6f0009;
 }
 
@@ -165,4 +165,39 @@
 }
 .content-card-product-wrapper {
     padding: 0.5rem 1rem;
+}
+
+.sizes-container {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: -2;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.sizes-container .tamaño-boton {
+    background-color: #f5f4f0b0;
+    border: 1px solid #6f0009;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #6f0009;
+    transition: all 0.3s ease;
+}
+
+.sizes-container .tamaño-boton:hover,
+.sizes-container .tamaño-boton.seleccionado {
+    background-color: #6f0009;
+    color: white;
+}
+
+/* Mostrar al hacer hover */
+.card-product:hover .sizes-container {
+    z-index: 1;
+    opacity: 1;
 }

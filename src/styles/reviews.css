@@ -1,0 +1,30 @@
+.Reviews-contenedor {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .Reviews-contenedor h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .Review {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+  }
+  
+  .Review-nombre {
+    margin: 0;
+    color: #333;
+  }
+  
+  .Review-texto {
+    margin: 5px 0;
+    font-style: italic;
+  }
+  
+  .Review-puntuacion {
+    color: #ffc107; /* dorado tipo estrellas */
+  }
