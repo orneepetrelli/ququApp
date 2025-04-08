@@ -14,6 +14,10 @@ import Favoritos from "./scripts/favoritos";
 import SideBar from "./scripts/sidebar";
 import "./App.css";
 
+import Buscar from "./scripts/buscarlupita";
+
+<Route path="/buscar" element={<Buscar />} />
+
 
 function App() {
   // const [carritoVisible, setCarritoVisible] = useState(false);
